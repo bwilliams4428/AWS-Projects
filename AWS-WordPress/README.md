@@ -59,5 +59,16 @@ The purpose of this project is to host a highly availalbe and scaliable Word Pre
                 
                 Assign private subnets to private subnet route table
                 Image VPC16
- 
+
+5. Create Security Groups for http, ssh and database traffic.
+                
+                Create security group for web and ssh traffic.
+                Set the source for http traffic to anywhere ipv4 and the source for ssh traffic to my IP.
+                IMAGE WBSG1
+                
+                Create security for database traffic. Set the source to as the type to MYSQL/Aurora and source as the web traffic security group.
+                IMAGE DBSG
+                
+
+                
                 
