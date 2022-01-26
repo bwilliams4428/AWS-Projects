@@ -1,4 +1,4 @@
-The purpose of this project is to host a highly availalbe and scaliable Word Press site on AWS. The hosting environment will use a custom VPC, RDS, EC2, EFS, ALB and ASG technologies.
+The purpose of this project is to host a highly availalbe and scaliable Word Press site on AWS. The hosting environment will use a custom PHP 8,VPC, RDS, EC2, EFS, ALB, Apache and ASG technologies. Since Word Press will use the free tier AMI, I will manaully upgrade from PHP 7.2 to PHP 8. 
 
 1. I will first create a custom VPC with two public and two private subnets in different availability zones.
         
@@ -31,6 +31,8 @@ The purpose of this project is to host a highly availalbe and scaliable Word Pre
               IPv4 CIDR block - 12.0.4.0/24
               
               Enable DNS hostnames and DNS resolution.
+              
+              Enable auto assign IPv4 settings on the public subnets.
               
               IMAGES VPC1-4
 
@@ -78,6 +80,77 @@ The purpose of this project is to host a highly availalbe and scaliable Word Pre
                 ImagesRDS1-6
                 
 7. Create EFS instance
+                
+                Images EFS
+                
+8. Create an EC2 instance, install Apache, PHP 7.2, Word Press and upgrade to PHP 8
+                
+                Create an EC2 instance and select Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type as the AMI.
+                Select a t2.mirco as the instnace type.
+                Include the EFS in the EC2 configuration to auto mount the filesystem upon launch and change the mount point to /var/www/html, the location where our                 webserver and wordpress will be installed
+                Click next then click the launch button to create the instance.
+                After SSH to the recently launched EC2, you see that the EFS has auto mounted with a mount point of /var/www/html.
+                Install Apache from the CLI using the following yum command: sudo yum install -y httpd
+                Start Apache, set Apache to auto start upon rebooting the server and check the status of Apache
+                Confirm that Apache is up and running by accessing the EC2's DNS endpoint from web browser.
+                
+                Run the following commands from the CLI to upgarde to PHP 8
+                        sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+                        sudo yum -y install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
+                        sudo yum makecache
+                        sudo yum -y install yum-utils
+                        sudo yum remove -y php php-* \
+                        sudo amazon-linux-extras disable php7.2
+                        sudo yum-config-manager --disable 'remi-php*'
+                        sudo amazon-linux-extras enable php8.0
+                        sudo yum clean metadata
+                        sudo yum install php-{pear,cgi,pdo,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,json,xml,fpm,intl,zip}
+                        sudo systemctl stop php-fpm
+                        sudo systemctl start php-fpm
+                        sudo systemctl restart httpd
+              
+              Install WordPress
+                       cd /home/ec2-user/
+                       wget https://wordpress.org/latest.tar.gz
+                       tar -xzf latest.tar.gz 
+                       cd wordpress
+                       cp wp-config-sample.php wp-config.php          
+                       
+                       Use Nano or Vi to edit the wp-config.php file. Input the RDS DNS endpoint as the DB_Host name.
+                       Input your DB_NAME,_USER and _PASSWORD values into the respective fields.
+                       
+                       Copy Word Press directory to /var/www/html from /home/ec2-user
+                       sudo cp -r wordpress/* /var/www/html/
+                       
+                       Change user/group permissions of /var/www so that Apache can access files at that location
+                       sudo chown -R apache:apache /var/www/
+                       
+                       Make the following changes in /etc/httpd/conf/httpd.conf:
+
+                      Scroll to line 102 (line numbers maybe different on your EC2)Replace the following lines
+
+                        <Directory />
+                          AllowOverride none
+                          Require all denied
+                        </Directory>
+
+                      with the
+                       <Directory />
+                         Options FollowSymLinks
+                         AllowOverride All
+                       </Directory>
+
+                       scroll down to line no 125 and change AllowOverride None to AllowOverride All
+
+                        scroll down to line no 151 and change AllowOverride None to AllowOverride All
+
+                        Restart Apache Web Server
+
+                        sudo systemctl restart httpd
+                       
+                
+                
+                
 
                
                 
