@@ -68,6 +68,18 @@ The purpose of this project is to host a highly availalbe and scaliable Word Pre
                 
                 Create security for database traffic. Set the source to as the type to MYSQL/Aurora and source as the web traffic security group.
                 IMAGE DBSG
+
+6. Create database subnet group and RDS Instance for Word Press
+                
+                Create subnet group to place the RDS instance in a private subnet. Select two AZ and the private subnets for high availability.
+                Image DBSNG
+                
+                Create a MYSQL RDS Instance for Word Press.
+                ImagesRDS1-6
+                
+7. Create EFS instance
+
+               
                 
 
                 
