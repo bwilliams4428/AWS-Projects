@@ -30,3 +30,34 @@ The purpose of this project is to host a highly availalbe and scaliable Word Pre
               Availability Zone - us-east-1b
               IPv4 CIDR block - 12.0.4.0/24
               
+              Enable DNS hostnames and DNS resolution.
+              
+              IMAGES VPC1-4
+
+2. Create an Internet Gateway and NAT Gateway.
+             
+              Create an Internet gatway and attach the IGW to my VPC. 
+              Create a NAT Gateway, selec Private-Subnet-1, set the connectivity type to public and assign an elastic IP to the NGW.
+              
+              IMAGES VPC5-8
+
+3. Create Route Tables for the public and private subnets.
+                
+                Create two route tables (public and private) and select the WP-VPC.
+                IMAGES VPC9-10
+                
+4. Create routes in route tables and assign subnets to route tables.
+                
+                Create a route to IGW in public subnet route table 
+                IMAGE VPC11-12
+                
+                Assign public subnets to public route table
+                Image VPC13-14
+                
+                Create a route to NGW in private subnet route table
+                Image VPC15
+                
+                Assign private subnets to private subnet route table
+                Image VPC16
+ 
+                
