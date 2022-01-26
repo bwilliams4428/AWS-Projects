@@ -147,10 +147,18 @@ The purpose of this project is to host a highly availalbe and scaliable Word Pre
                         Restart Apache Web Server
 
                         sudo systemctl restart httpd
+                        
+                        Word Press install page now displays.
+                        
+                        Install Word Press
+                        
+                        Word Press is live on our EC2.
                        
+                        Create an imaage of the web server EC2. This image will be used to launch instances in the Auto Scaling group.
                 
                 
-                
+7. Auto Scaling Group
+8. Load Balancer
 
                
                 
