@@ -3,7 +3,7 @@ The purpose of this project is to host a highly availalbe and scaliable Word Pre
 
 Network Topology:
 
-
+[](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/network%20topology.PNG)
 
 1. I will first create a custom VPC with two public and two private subnets in different availability zones.
         
