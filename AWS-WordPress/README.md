@@ -1,4 +1,9 @@
-The purpose of this project is to host a highly availalbe and scaliable Word Press site on AWS. The hosting environment will use a custom PHP 8,VPC, RDS, EC2, EFS, ALB, Apache and ASG technologies. Since Word Press will use the free tier AMI, I will manaully upgrade from PHP 7.2 to PHP 8. 
+The purpose of this project is to host a highly availalbe and scaliable Word Press site on AWS. The hosting environment will use PHP 8,VPC, RDS, EC2, EFS, ALB, Apache and ASG technologies.
+
+
+Network Topology:
+
+
 
 1. I will first create a custom VPC with two public and two private subnets in different availability zones.
         
@@ -36,10 +41,10 @@ The purpose of this project is to host a highly availalbe and scaliable Word Pre
               
               IMAGES VPC1-4
 
-2. Create an Internet Gateway and NAT Gateway.
+2. Create an Internet Gateway.
              
               Create an Internet gatway and attach the IGW to my VPC. 
-              Create a NAT Gateway, selec Private-Subnet-1, set the connectivity type to public and assign an elastic IP to the NGW.
+             
               
               IMAGES VPC5-8
 
@@ -100,7 +105,6 @@ The purpose of this project is to host a highly availalbe and scaliable Word Pre
                         sudo yum makecache
                         sudo yum -y install yum-utils
                         sudo yum remove -y php php-* \
-                        sudo amazon-linux-extras disable php7.2
                         sudo yum-config-manager --disable 'remi-php*'
                         sudo amazon-linux-extras enable php8.0
                         sudo yum clean metadata
@@ -109,10 +113,11 @@ The purpose of this project is to host a highly availalbe and scaliable Word Pre
                         sudo systemctl start php-fpm
                         sudo systemctl restart httpd
               
-              Install WordPress
+              Download WordPress archive and extract it
                        cd /home/ec2-user/
                        wget https://wordpress.org/latest.tar.gz
                        tar -xzf latest.tar.gz 
+              Copy config file sample to config.php         
                        cd wordpress
                        cp wp-config-sample.php wp-config.php          
                        
@@ -123,7 +128,7 @@ The purpose of this project is to host a highly availalbe and scaliable Word Pre
                        sudo cp -r wordpress/* /var/www/html/
                        
                        Change user/group permissions of /var/www so that Apache can access files at that location
-                       sudo chown -R apache:apache /var/www/
+                       sudo chown -R apache:apache /var/www/*
                        
                        Make the following changes in /etc/httpd/conf/httpd.conf:
 
