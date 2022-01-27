@@ -1,5 +1,6 @@
-The purpose of this project is to host a highly availalbe and scaliable Word Press site on AWS. The hosting environment will use PHP 8,VPC, RDS, EC2, EFS, ALB, Apache and ASG technologies.
-
+The purpose of this project is to host a highly availalbe and scaliable Word Press site on AWS. 
+I will first create a custom VPC to host the EC2 instances, RDS, an Elastic File Storage instance and Load Balancer.
+The environment will also include an Auto Scaling group to increase computing power during high traffic times.
 
 Network Topology:
 
