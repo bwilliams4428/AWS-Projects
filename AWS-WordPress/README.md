@@ -99,25 +99,33 @@ Network Topology:
    - Create three security groups the webserver (EC2), the database (RDS) and the network file storage (EFS) 
      
      - Web server security group
+       
        ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WebSG1.PNG)
      
      - Database security group
+       
        ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/DBSG.PNG)
     
      - Network file storage security group
+       
        ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/efssg.PNG)
-        
-                
-                Create security for database traffic. Set the source to as the type to MYSQL/Aurora and source as the web traffic security group.
-                IMAGE DBSG
 
-6. Create database subnet group and RDS Instance for Word Press
+# 6. RDS
+     
+   - Create a database subnet group to place the RDS instance in a private subnet. Select two AZ in the private subnets for high availability
+     
+     ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/DBSNG.PNG)
                 
-                Create subnet group to place the RDS instance in a private subnet. Select two AZ and the private subnets for high availability.
-                Image DBSNG
-                
-                Create a MYSQL RDS Instance for Word Press.
-                ImagesRDS1-6
+   - Create a MYSQL RDS Instance for Word Press.
+     
+     ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/RDS1.PNG)
+     ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/RDS2.PNG)
+     ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/RDS3.PNG)
+     ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/RDS4.PNG)
+     ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/RDS5.PNG)
+     ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/RDS6.PNG)
+     ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/RDS7.PNG)
+     ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/rdsep.PNG)
                 
 7. Create EFS instance
                 
