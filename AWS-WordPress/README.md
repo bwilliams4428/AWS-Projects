@@ -1,4 +1,4 @@
-# Highly Available and Scaliable Server Environment For Word Press
+# Highly Available and Scaliable LAMP Environment To Host Word Press 
 
 
 The purpose of this project/tutorial is to host a highly availalbe and scaliable Word Press site on AWS. 
