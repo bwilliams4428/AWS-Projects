@@ -159,7 +159,7 @@ Network Topology:
    yum install -y httpd
    systemctl start httpd
    systemctl enable httpd
-   echo "fs-05dc68312508654fb.efs.us-east-1.amazonaws.com:/ /var/www/html nfs defaults,_netdev 0 0" >> /etc/fstab
+   echo "<mount name>.efs.<region>.amazonaws.com:/ /var/www/html nfs defaults,_netdev 0 0" >> /etc/fstab
    ```
    
   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC23.PNG)
@@ -168,10 +168,16 @@ Network Topology:
  - Click until arriving at 'Step 7: Review Instance Launch', create a key pair, download the private key and press the launch button to create the EC2 instance
   
   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC24.PNG)
-                After SSH to the recently launched EC2, you see that the EFS has auto mounted with a mount point of /var/www/html.
-                Install Apache from the CLI using the following yum command: sudo yum install -y httpd
-                Start Apache, set Apache to auto start upon rebooting the server and check the status of Apache
-                Confirm that Apache is up and running by accessing the EC2's DNS endpoint from web browser.
+  
+ - SSH to the instance using the downloaded private key and confirm that EFS auto mounted by using the following command:
+   ```
+   df -T -h
+   ```
+ - The EFS instance will display as a filesystem   
+            
+ - Confirm that Apache is up and running by accessing the EC2's DNS endpoint from a web browser. The Apache test page will display.
+   
+   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC27.PNG)
                 
                 Run the following commands from the CLI to upgarde to PHP 8
                         sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
