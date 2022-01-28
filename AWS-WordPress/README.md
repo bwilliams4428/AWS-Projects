@@ -127,9 +127,12 @@ Network Topology:
      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/RDS7.PNG)
      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/rdsep.PNG)
                 
-7. Create EFS instance
-                
-                Images EFS
+# 7. EFS
+
+  - Create EFS instance for file storage across avaliablity zones
+               
+     ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EFS1.PNG)
+     ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EFS2.PNG)
                 
 8. Create an EC2 instance, install Apache, PHP 7.2, Word Press and upgrade to PHP 8
                 
