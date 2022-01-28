@@ -40,7 +40,7 @@ Network Topology:
       - Availability Zone - us-east-1b
       - IPv4 CIDR block - 12.0.2.0/24
       
-      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC-3.PNG)        
+      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC3.PNG)        
       
       - Subnet Name - Private-Subnet-1
       - Availability Zone - us-east-1a
@@ -50,11 +50,14 @@ Network Topology:
       - Availability Zone - us-east-1b
       - IPv4 CIDR block - 12.0.4.0/24
       
-      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC-4.PNG)
+      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC4.PNG)
               
-      - Enable auto assign IPv4 settings on the public subnets.
+      - Enable auto assign IPv4 settings on the public subnets by clicking on 'Edit Subnet Settings' from the Action menu
+      - Click the checkbox next 'Enable auto-assign public IPv4 address'
+      - Press the Save button
       
       ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/publiciv4psunet.PNG)
+      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/vpcsubnetenableipv4.PNG)
 
 2. Create an Internet Gateway.
              
