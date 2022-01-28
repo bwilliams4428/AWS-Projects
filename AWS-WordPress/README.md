@@ -175,33 +175,46 @@ Network Topology:
    ```
  - The EFS instance will display as a filesystem   
             
- - Confirm that Apache is up and running by accessing the EC2's DNS endpoint from a web browser. The Apache test page will display.
+ - Confirm that Apache is up and running by accessing the EC2's DNS endpoint from a web browser 
+ - The Apache test page will display
    
    ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC27.PNG)
                 
-                Run the following commands from the CLI to upgarde to PHP 8
-                        sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-                        sudo yum -y install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
-                        sudo yum makecache
-                        sudo yum -y install yum-utils
-                        sudo yum-config-manager --disable 'remi-php*'
-                        sudo amazon-linux-extras enable php8.0
-                        sudo yum clean metadata
-                        sudo yum install php-{pear,cgi,pdo,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,json,xml,fpm,intl,zip}
-                        sudo systemctl stop php-fpm
-                        sudo systemctl start php-fpm
-                        sudo systemctl restart httpd
-              
-              Download WordPress archive and extract it
-                       cd /home/ec2-user/
-                       wget https://wordpress.org/latest.tar.gz
-                       tar -xzf latest.tar.gz 
-              Copy config file sample to config.php         
-                       cd wordpress
-                       cp wp-config-sample.php wp-config.php          
-                       
-                       Use Nano or Vi to edit the wp-config.php file. Input the RDS DNS endpoint as the DB_Host name.
-                       Input your DB_NAME,_USER and _PASSWORD values into the respective fields.
+ - Run the following commands from the CLI to install PHP 8 on the server
+   ```
+   sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+   sudo yum -y install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
+   sudo yum makecache
+   sudo yum -y install yum-utils
+   sudo yum-config-manager --disable 'remi-php*'
+   sudo amazon-linux-extras enable php8.0
+   sudo yum clean metadata
+   sudo yum install php-{pear,cgi,pdo,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,json,xml,fpm,intl,zip}
+   sudo systemctl stop php-fpm
+   sudo systemctl start php-fpm
+   ```          
+ - Restart Apache
+   ```
+   sudo systemctl restart httpd
+   ```
+ 
+ - Download the latest WordPress archive to the EC2 instance's home directory and extract it
+   ```
+   cd /home/ec2-user/
+   wget https://wordpress.org/latest.tar.gz
+   tar -xzf latest.tar.gz
+   ```
+   
+ - Copy config file sample to wp-config.php         
+   ```
+   cd wordpress
+   cp wp-config-sample.php wp-config.php          
+   ```
+
+ - Use a text editor to edit the wp-config.php file. Input the RDS DNS endpoint as the DB_Host name.
+ - Input your DB_NAME,_USER and _PASSWORD values into the respective fields.
+   
+   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC29.PNG)
                        
                        Copy Word Press directory to /var/www/html from /home/ec2-user
                        sudo cp -r wordpress/* /var/www/html/
