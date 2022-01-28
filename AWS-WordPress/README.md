@@ -134,11 +134,35 @@ Network Topology:
      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EFS1.PNG)
      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EFS2.PNG)
                 
-8. Create an EC2 instance, install Apache, PHP 7.2, Word Press and upgrade to PHP 8
+# 8. EC2
                 
-                Create an EC2 instance and select Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type as the AMI.
-                Select a t2.mirco as the instnace type.
-                Include the EFS in the EC2 configuration to auto mount the filesystem upon launch and change the mount point to /var/www/html, the location where our                 webserver and wordpress will be installed
+  - Launch an EC2 instance and select Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type as the AMI
+  
+  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC21.PNG)
+  
+  - Select a t2.mirco as the instnace type.
+  
+  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC22.PNG)
+  
+  - Select the WP-VPC as the network, Public-Subnet-l as the subnet (the auto assign IP and enable resource-based IPv4 options can be left disabled/unchecked. the public subnet will auto assign an IPv4 during the creation process)
+  
+  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC23.PNG)
+ 
+ - Scroll down to find 'User data' textarea and copy/paste the following script to auto mount the EFS drive, install, start and enable Apache web server
+   
+   ```
+   #!/bin/bash
+   yum update -y
+   mkdir -p /var/www/html
+   mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-05dc68312508654fb.efs.us-east-1.amazonaws.com:/       /var/www/html/
+   yum install -y amazon-efs-utils
+   yum install -y httpd
+   systemctl start httpd
+   systemctl enable httpd
+   echo "fs-05dc68312508654fb.efs.us-east-1.amazonaws.com:/ /var/www/html nfs defaults,_netdev 0 0" >> /etc/fstab
+   ```
+   
+  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC23.PNG)
                 Click next then click the launch button to create the instance.
                 After SSH to the recently launched EC2, you see that the EFS has auto mounted with a mount point of /var/www/html.
                 Install Apache from the CLI using the following yum command: sudo yum install -y httpd
