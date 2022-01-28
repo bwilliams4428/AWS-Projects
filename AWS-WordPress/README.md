@@ -300,8 +300,14 @@ Network Topology:
  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/Alb3.PNG)
  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/Alb4.PNG)
 
+ - Click the 'Create Load Balancer' button
  
- - The targets used by the Load Balancer will be registered after the Auto Scalling Group spins up the additional EC2 web server instances
+ - Create an Auto Scalling Group
+   
+ ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WPASG1.PNG)
+ ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WPASG2.PNG)
+ ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WPASG3.PNG)
+
  
  
 
