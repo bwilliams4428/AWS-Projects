@@ -267,7 +267,7 @@ Network Topology:
  
  - Create an imaage of the web server EC2
  
- ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC16.PNG)
+ ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC216.PNG)
  
  
  - This image will be used to launch instances in the Auto Scaling group.
