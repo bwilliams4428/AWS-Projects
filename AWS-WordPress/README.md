@@ -164,9 +164,10 @@ Network Topology:
    
   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC23.PNG)
                 
-                
-                
-                Click next then click the launch button to create the instance.
+ - Continue clicking the Next button until being prompted to select a security group for the EC2 instance and select webserver security group
+ - Click until arriving at 'Step 7: Review Instance Launch', create a key pair, download the private key and press the launch button to create the EC2 instance
+  
+  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC24.PNG)
                 After SSH to the recently launched EC2, you see that the EFS has auto mounted with a mount point of /var/www/html.
                 Install Apache from the CLI using the following yum command: sudo yum install -y httpd
                 Start Apache, set Apache to auto start upon rebooting the server and check the status of Apache
