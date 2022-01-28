@@ -197,7 +197,11 @@ Network Topology:
    ```
    sudo systemctl restart httpd
    ```
- 
+ - PHP 8 is now installed on the server
+   
+   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC28.PNG)
+   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC28.1.PNG)
+   
  - Download the latest WordPress archive to the EC2 instance's home directory and extract it
    ```
    cd /home/ec2-user/
@@ -215,44 +219,58 @@ Network Topology:
  - Input your DB_NAME,_USER and _PASSWORD values into the respective fields.
    
    ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC291.png)
+
+ - Additional modifications can be made to the wp-config.php file for a more customized install 
                        
-                       Copy Word Press directory to /var/www/html from /home/ec2-user
-                       sudo cp -r wordpress/* /var/www/html/
-                       
-                       Change user/group permissions of /var/www so that Apache can access files at that location
-                       sudo chown -R apache:apache /var/www/*
-                       
-                       Make the following changes in /etc/httpd/conf/httpd.conf:
+ - Copy Word Press directory to /var/www/html from /home/ec2-user
+   ```                    
+   sudo cp -r wordpress/* /var/www/html/
+   ```                    
+ 
+ - Change user/group permissions of /var/www so that Apache can access/modify files inside the web root directory
+   ```
+   sudo chown -R apache:apache /var/www/*
+   ```                    
+ - Make the following changes in /etc/httpd/conf/httpd.conf:
 
-                      Scroll to line 102 (line numbers maybe different on your EC2)Replace the following lines
+      - Scroll to line number 102 (line numbers may differ) and replace
+        ```
+        <Directory />
+           AllowOverride none
+           Require all denied
+        </Directory>
+        ```
+      - With
+        ```
+        <Directory />
+           Options FollowSymLinks
+           AllowOverride All
+        </Directory>
 
-                        <Directory />
-                          AllowOverride none
-                          Require all denied
-                        </Directory>
+ - Scroll down to line number 125 and change AllowOverride None to AllowOverride All
 
-                      with the
-                       <Directory />
-                         Options FollowSymLinks
-                         AllowOverride All
-                       </Directory>
+ - Scroll down to line no 151 and change AllowOverride None to AllowOverride All
+ 
+ - Save the file and exit the text editor 
 
-                       scroll down to line no 125 and change AllowOverride None to AllowOverride All
-
-                        scroll down to line no 151 and change AllowOverride None to AllowOverride All
-
-                        Restart Apache Web Server
-
-                        sudo systemctl restart httpd
+ - Restart Apache Web Server
+   ```
+   sudo systemctl restart httpd
+   ```                     
+ - Access the DNS endpoint from the web browser to see the Word Press install page.
                         
-                        Word Press install page now displays.
-                        
-                        Install Word Press
-                        
-                        Word Press is live on our EC2.
-                       
-                      
-                        Stop the EC2 instance Create an imaage of the web server EC2. This image will be used to launch instances in the Auto Scaling group.
+ - Complete the Word Press install process to see the Word Press site from DNS endpoint of the EC2 instance.
+  
+  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC215.png)                         
+
+ - Stop the EC2 instance 
+ 
+ - Create an imaage of the web server EC2
+ 
+ ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC16.PNG)
+ 
+ 
+ - This image will be used to launch instances in the Auto Scaling group.
                 
                 
 7. Auto Scaling Group
