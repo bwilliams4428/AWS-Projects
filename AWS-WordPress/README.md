@@ -275,15 +275,27 @@ Network Topology:
                 
 # 7 Auto Scaling Group & Load Balancer
  
- - Create a Launch Template using AMI based on the Webserver EC2           
+ - Create a Launch Template using AMI based on the Webserver EC2
+            
  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/LC1.PNG)
  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/LC2.PNG)
  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/LC3.PNG)
  
  - Click the 'Create Launch Configuration' button to create the Launch Template
+
+ - Create a Target Group for the Load Balancer to use
  
- - Create a Load Balancer
+ ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WPTG1.PNG)
+ ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WPTG2.PNG)
+ ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WPTG3.PNG)
  
+ - Create an Application Load Balancer
+ 
+ ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/Alb.PNG)
+ ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/Alb2.PNG)
+ ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/Alb3.PNG)
+ ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/Alb4.PNG)
+
  
  - The targets used by the Load Balancer will be registered after the Auto Scalling Group spins up the additional EC2 web server instances
  
