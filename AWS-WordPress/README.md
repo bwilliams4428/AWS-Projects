@@ -22,7 +22,12 @@ Network Topology:
       
     Press the Create VPC button to create the VPC. 
     
-    Now create the four subnets inside the WP-VPC.
+      - Enable DNS hostnames and DNS resolution from the VPC management page.
+      
+      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC-dnshr.PNG)
+      
+    
+    Now create the public and private subnets inside the WP-VPC.
     
     Subnets:
            
@@ -34,7 +39,8 @@ Network Topology:
       - Subnet Name - Public-Subnet-2
       - Availability Zone - us-east-1b
       - IPv4 CIDR block - 12.0.2.0/24
-              
+      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC-3.PNG)        
+      
       - Subnet Name - Private-Subnet-1
       - Availability Zone - us-east-1a
       - IPv4 CIDR block - 12.0.3.0/24
@@ -42,12 +48,10 @@ Network Topology:
       - Subnet Name - Private-Subnet-2
       - Availability Zone - us-east-1b
       - IPv4 CIDR block - 12.0.4.0/24
-              
-      - Enable DNS hostnames and DNS resolution.
+      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC-4.PNG)
               
       - Enable auto assign IPv4 settings on the public subnets.
-              
-              IMAGES VPC1-4
+      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/publiciv4psunet.PNG)
 
 2. Create an Internet Gateway.
              
