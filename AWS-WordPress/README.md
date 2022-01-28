@@ -214,7 +214,7 @@ Network Topology:
  - Use a text editor to edit the wp-config.php file. Input the RDS DNS endpoint as the DB_Host name.
  - Input your DB_NAME,_USER and _PASSWORD values into the respective fields.
    
-   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC291.PNG)
+   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC291.png)
                        
                        Copy Word Press directory to /var/www/html from /home/ec2-user
                        sudo cp -r wordpress/* /var/www/html/
