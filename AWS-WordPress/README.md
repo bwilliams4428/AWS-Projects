@@ -257,27 +257,30 @@ Network Topology:
    ```
    sudo systemctl restart httpd
    ```                     
- - Access the DNS endpoint from the web browser to see the Word Press install page.
+ - Access the DNS endpoint from the web browser to see the Word Press install page
                         
- - Complete the Word Press install process to see the Word Press site from DNS endpoint of the EC2 instance.
+ - Complete the Word Press install process to see the Word Press site from DNS endpoint of the EC2 instance
   
   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC215.PNG)                         
 
  - Stop the EC2 instance 
  
- - Create an imaage of the web server EC2
+ - Create an image/AMI of the web server EC2
  
  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC216.PNG)
  
+ - This image/AMI will be used by the Auto Scaling group to launch identical Webserver instances
+                
+# 7 Auto Scaling Group & Load Balancer
  
- - This image will be used to launch instances in the Auto Scaling group.
-                
-                
-7. Auto Scaling Group
-8. Load Balancer
-
-               
-                
+ - Create a Launch Template using AMI based on the Webserver EC2           
+ ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/LC1.PNG)
+ ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/LC2.PNG)
+ ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/LC3.PNG)
+ 
+ - Click the 'Create Launch Configuration' button to create the Launch Template
+ 
+ 
 
                 
                 
