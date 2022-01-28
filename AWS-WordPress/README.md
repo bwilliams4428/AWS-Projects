@@ -13,75 +13,74 @@ Network Topology:
 
 # 1. VPC
 
-   Create a custom VPC with two public and two private subnets in different availability zones
+ Create a custom VPC with two public and two private subnets in different availability zones
         
-   VPC Settings:
+ VPC Settings:
       
-      - Name - WP-VPC
-      - IPv4 CIDR block - IPv4 CIDR manual input
-      - IPv4 CIDR - 12.0.0.0/16
-      - IPv6 CIDR block - No IPv6 CIDR block
-      - Tenancy - Default
+   - Name - WP-VPC
+   - IPv4 CIDR block - IPv4 CIDR manual input
+   - IPv4 CIDR - 12.0.0.0/16
+   - IPv6 CIDR block - No IPv6 CIDR block
+   - Tenancy - Default
       
-      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC-1.PNG)
+   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC-1.PNG)
       
-    Press the Create VPC button to create the VPC. 
+ Press the Create VPC button to create the VPC. 
     
-      - Enable DNS hostnames and DNS resolution from the VPC management page.
+   - Enable DNS hostnames and DNS resolution from the VPC management page.
       
-      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC-dnshr.PNG)
+   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC-dnshr.PNG)
       
+ Now create the public and private subnets inside the WP-VPC.
     
-    Now create the public and private subnets inside the WP-VPC.
-    
-    Subnets:
+ Subnets:
            
-      - VPC ID - WP-VPC
-      - Subnet Name - Public-Subnet-1
-      - Availability Zone - us-east-1a
-      - IPv4 CIDR block - 12.0.1.0/24
+   - VPC ID - WP-VPC
+   - Subnet Name - Public-Subnet-1
+   - Availability Zone - us-east-1a
+   - IPv4 CIDR block - 12.0.1.0/24
               
-      - Subnet Name - Public-Subnet-2
-      - Availability Zone - us-east-1b
-      - IPv4 CIDR block - 12.0.2.0/24
+   - Subnet Name - Public-Subnet-2
+   - Availability Zone - us-east-1b
+   - IPv4 CIDR block - 12.0.2.0/24
       
-      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC3.PNG)        
+  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC3.PNG)        
       
-      - Subnet Name - Private-Subnet-1
-      - Availability Zone - us-east-1a
-      - IPv4 CIDR block - 12.0.3.0/24
+   - Subnet Name - Private-Subnet-1
+   - Availability Zone - us-east-1a
+   - IPv4 CIDR block - 12.0.3.0/24
               
-      - Subnet Name - Private-Subnet-2
-      - Availability Zone - us-east-1b
-      - IPv4 CIDR block - 12.0.4.0/24
+   - Subnet Name - Private-Subnet-2
+   - Availability Zone - us-east-1b
+   - IPv4 CIDR block - 12.0.4.0/24
       
-      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC4.PNG)
+  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC4.PNG)
               
-      - Enable auto assign IPv4 settings on the public subnets by clicking on 'Edit Subnet Settings' from the Action menu
-      - Click the checkbox next 'Enable auto-assign public IPv4 address'
-      - Press the Save button
+   - Enable auto assign IPv4 settings on the public subnets by clicking on 'Edit Subnet Settings' from the Action menu
+   - Click the checkbox next 'Enable auto-assign public IPv4 address'
+   - Press the Save button
       
-      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/publiciv4psunet.PNG)
-      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/vpcsubnetenableipv4.PNG)
+  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/publiciv4psunet.PNG)
+  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/vpcsubnetenableipv4.PNG)
 
-2. Internet Gateway
+# 2. Internet Gateway
              
-      - Create an Internet gatway and attach the IGW to my VPC
+   - Create an Internet gatway and attach the IGW to my VPC
       
-      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC5.PNG)       
-      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC6.PNG)
-      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC7.PNG)   
+   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC5.PNG)       
+   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC6.PNG)
+   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC7.PNG)   
 
-3. Route Table
+# 3. Route Table
        
-      - Create two route tables (public and private) and select the WP-VPC
+   - Create two route tables (public and private) and select the WP-VPC
       
-      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC9.PNG)
-      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC10.PNG)   
+   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC9.PNG)
+   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC10.PNG)   
                 
-4. Routes & Route Tables
+# 4. Routes & Route Tables
                 
-      - Create a route to IGW in public subnet route table 
+   - Create a route to IGW in public subnet route table 
                 IMAGE VPC11-12
                 
                 Assign public subnets to public route table
