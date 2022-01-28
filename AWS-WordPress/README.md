@@ -1,3 +1,6 @@
+# Highly Available and Scaliable Server Environment For Word Press
+
+
 The purpose of this project/tutorial is to host a highly availalbe and scaliable Word Press site on AWS. 
 I will first create a custom VPC to host the EC2 instances, RDS, an Elastic File Storage instance and Load Balancer.
 The environment will also include an Auto Scaling group to increase computing power during high traffic times.
@@ -8,7 +11,9 @@ Network Topology:
 
 ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/network%20topology.PNG)
 
-1. I will first create a custom VPC with two public and two private subnets in different availability zones.
+1. VPC
+
+   Create a custom VPC with two public and two private subnets in different availability zones
         
    VPC Settings:
       
@@ -61,22 +66,22 @@ Network Topology:
 
 2. Internet Gateway
              
-      - Create an Internet gatway and attach the IGW to my VPC. 
+      - Create an Internet gatway and attach the IGW to my VPC
       
       ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC5.PNG)       
       ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC6.PNG)
       ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC7.PNG)   
 
-3. Create Route Tables for the public and private subnets.
+3. Route Table
        
-      - Create two route tables (public and private) and select the WP-VPC.
+      - Create two route tables (public and private) and select the WP-VPC
       
       ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC9.PNG)
       ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC10.PNG)   
                 
-4. Create routes in route tables and assign subnets to route tables.
+4. Routes & Route Tables
                 
-                Create a route to IGW in public subnet route table 
+      - Create a route to IGW in public subnet route table 
                 IMAGE VPC11-12
                 
                 Assign public subnets to public route table
