@@ -81,6 +81,11 @@ Network Topology:
 # 4. Routes & Route Tables
                 
    - Create a route to IGW in public subnet route table 
+   
+   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC11.PNG)
+   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC12.PNG)               
+                
+                
                 IMAGE VPC11-12
                 
                 Assign public subnets to public route table
