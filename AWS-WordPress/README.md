@@ -319,6 +319,13 @@ Network Topology:
  
  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/ALBTGregistered.PNG)
  
+- The server environment is complete and up and running
 
+- Access the DNS endpoint for the Load Balancer to access a fully functioning Word Press site
+ 
+ ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/ALBDNS.PNG)
+ ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WPALBfinal.PNG)
+
+#FIN
                 
                 
