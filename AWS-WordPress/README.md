@@ -59,20 +59,20 @@ Network Topology:
       ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/publiciv4psunet.PNG)
       ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/vpcsubnetenableipv4.PNG)
 
-2. An Internet Gateway is needed to private Internet access to assets that will use the VPC.
+2. Internet Gateway
              
       - Create an Internet gatway and attach the IGW to my VPC. 
       
       ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC5.PNG)       
       ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC6.PNG)
       ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC7.PNG)   
-      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC8.PNG)   
-       
 
 3. Create Route Tables for the public and private subnets.
-                
-                Create two route tables (public and private) and select the WP-VPC.
-                IMAGES VPC9-10
+       
+      - Create two route tables (public and private) and select the WP-VPC.
+      
+      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC9.PNG)
+      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC10.PNG)   
                 
 4. Create routes in route tables and assign subnets to route tables.
                 
