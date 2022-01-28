@@ -91,19 +91,15 @@ Network Topology:
    
    ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC13.PNG)
    ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC14.PNG)              
-                
-                
-                Image VPC13-14
-                
-                Create a route to NGW in private subnet route table
-                Image VPC15
-                
-                Assign private subnets to private subnet route table
-                Image VPC16
+   
+   - Press the 'Save Associations' button
 
-5. Create Security Groups for http, ssh and database traffic.
+# 5. Security Groups
                 
-                Create security group for web and ssh traffic.
+   - Create three security groups the webserver (EC2), the database (RDS) and the network file storage (EFS) 
+     
+     - Web server security group
+       ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WebSG1.PNG)
                 Set the source for http traffic to anywhere ipv4 and the source for ssh traffic to my IP.
                 IMAGE WBSG1
                 
