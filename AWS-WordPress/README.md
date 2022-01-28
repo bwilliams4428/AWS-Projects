@@ -84,11 +84,15 @@ Network Topology:
    
    ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC11.PNG)
    ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC12.PNG)               
+   
+   - Press the save button to create the route from the public route to the IGW so that assets in the public subnets can access the Internet            
+                
+   - Assign the public subnets to public route table
+   
+   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC13.PNG)
+   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC14.PNG)              
                 
                 
-                IMAGE VPC11-12
-                
-                Assign public subnets to public route table
                 Image VPC13-14
                 
                 Create a route to NGW in private subnet route table
