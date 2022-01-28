@@ -1,6 +1,8 @@
-The purpose of this project is to host a highly availalbe and scaliable Word Press site on AWS. 
+The purpose of this project/tutorial is to host a highly availalbe and scaliable Word Press site on AWS. 
 I will first create a custom VPC to host the EC2 instances, RDS, an Elastic File Storage instance and Load Balancer.
 The environment will also include an Auto Scaling group to increase computing power during high traffic times.
+
+It should take no longer than 15-20 minutes to get this setup up and running.
 
 Network Topology:
 
@@ -10,11 +12,11 @@ Network Topology:
         
    VPC Settings:
       
-      Name - WP-VPC
-      IPv4 CIDR block - IPv4 CIDR manual input
-      IPv4 CIDR - 12.0.0.0/16
-      IPv6 CIDR block - No IPv6 CIDR block
-      Tenancy - Default
+      - Name - WP-VPC
+      - IPv4 CIDR block - IPv4 CIDR manual input
+      - IPv4 CIDR - 12.0.0.0/16
+      - IPv6 CIDR block - No IPv6 CIDR block
+      - Tenancy - Default
       
       ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC-1.PNG)
       
