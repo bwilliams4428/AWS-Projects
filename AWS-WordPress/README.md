@@ -100,8 +100,13 @@ Network Topology:
      
      - Web server security group
        ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WebSG1.PNG)
-                Set the source for http traffic to anywhere ipv4 and the source for ssh traffic to my IP.
-                IMAGE WBSG1
+     
+     - Database security group
+       ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/DBSG.PNG)
+    
+     - Network file storage security group
+       ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/efssg.PNG)
+        
                 
                 Create security for database traffic. Set the source to as the type to MYSQL/Aurora and source as the web traffic security group.
                 IMAGE DBSG
