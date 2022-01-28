@@ -261,7 +261,7 @@ Network Topology:
                         
  - Complete the Word Press install process to see the Word Press site from DNS endpoint of the EC2 instance.
   
-  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC215.png)                         
+  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC215.PNG)                         
 
  - Stop the EC2 instance 
  
