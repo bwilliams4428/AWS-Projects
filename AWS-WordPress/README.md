@@ -289,7 +289,7 @@ Network Topology:
  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WPTG2.PNG)
  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WPTG3.PNG)
  
- - The targets used by the Load Balancer will be registered after creating the Auto Scalling Group
+ - The targets used by the Load Balancer will be registered after creating the Auto Scaling Group
  
  - Click the 'Create Target Group' button
  
@@ -326,6 +326,6 @@ Network Topology:
  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/ALBDNS.PNG)
  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WPALBfinal.PNG)
 
-#FIN
+# FIN
                 
                 
