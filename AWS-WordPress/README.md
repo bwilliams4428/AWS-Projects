@@ -270,6 +270,8 @@ Network Topology:
  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC216.PNG)
  
  - This image/AMI will be used by the Auto Scaling group to launch identical Webserver instances
+ 
+ - Restart the Webserver EC2 instance once the image/AMI has been created 
                 
 # 7 Auto Scaling Group & Load Balancer
  
@@ -279,6 +281,11 @@ Network Topology:
  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/LC3.PNG)
  
  - Click the 'Create Launch Configuration' button to create the Launch Template
+ 
+ - Create a Load Balancer
+ 
+ 
+ - The targets used by the Load Balancer will be registered after the Auto Scalling Group spins up the additional EC2 web server instances
  
  
 
