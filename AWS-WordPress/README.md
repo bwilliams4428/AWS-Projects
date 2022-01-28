@@ -8,15 +8,18 @@ Network Topology:
 
 1. I will first create a custom VPC with two public and two private subnets in different availability zones.
         
-        VPC Settings:
-            
-            Name - WP-VPC
-            IPv4 CIDR block - IPv4 CIDR manual input
-            IPv4 CIDR - 12.0.0.0/16
-            IPv6 CIDR block - No IPv6 CIDR block
-            Tenancy - Default
-            
-            Subnets:
+   VPC Settings:
+      
+      Name - WP-VPC
+      IPv4 CIDR block - IPv4 CIDR manual input
+      IPv4 CIDR - 12.0.0.0/16
+      IPv6 CIDR block - No IPv6 CIDR block
+      Tenancy - Default
+      
+      ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC-1.PNG)
+      
+      
+      Subnets:
               
               VPC ID - WP-VPC
               
@@ -105,7 +108,6 @@ Network Topology:
                         sudo yum -y install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
                         sudo yum makecache
                         sudo yum -y install yum-utils
-                        sudo yum remove -y php php-* \
                         sudo yum-config-manager --disable 'remi-php*'
                         sudo amazon-linux-extras enable php8.0
                         sudo yum clean metadata
@@ -160,7 +162,8 @@ Network Topology:
                         
                         Word Press is live on our EC2.
                        
-                        Create an imaage of the web server EC2. This image will be used to launch instances in the Auto Scaling group.
+                      
+                        Stop the EC2 instance Create an imaage of the web server EC2. This image will be used to launch instances in the Auto Scaling group.
                 
                 
 7. Auto Scaling Group
