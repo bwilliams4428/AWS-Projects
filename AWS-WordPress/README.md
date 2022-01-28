@@ -154,7 +154,7 @@ Network Topology:
    #!/bin/bash
    yum update -y
    mkdir -p /var/www/html
-   mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-05dc68312508654fb.efs.us-east-1.amazonaws.com:/       /var/www/html/
+   mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-05dc68312508654fb.efs.us-east-1.amazonaws.com:/ /var/www/html/
    yum install -y amazon-efs-utils
    yum install -y httpd
    systemctl start httpd
@@ -163,6 +163,9 @@ Network Topology:
    ```
    
   ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/EC23.PNG)
+                
+                
+                
                 Click next then click the launch button to create the instance.
                 After SSH to the recently launched EC2, you see that the EFS has auto mounted with a mount point of /var/www/html.
                 Install Apache from the CLI using the following yum command: sudo yum install -y httpd
