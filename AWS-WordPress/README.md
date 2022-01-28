@@ -291,7 +291,7 @@ Network Topology:
  
  - The targets used by the Load Balancer will be registered after creating the Auto Scalling Group
  
- - Click the 'Create Target  Group' button
+ - Click the 'Create Target Group' button
  
  - Create an Application Load Balancer
  
@@ -308,7 +308,16 @@ Network Topology:
  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WPASG2.PNG)
  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WPASG3.PNG)
  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WPASG4.PNG)
+
+ - Click the 'Create' button
  
+ - The Auto Scalling Group will spin up two additional EC2s based on the Webserver AMI
+ 
+ ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WPALBTGRegister.PNG)
+ 
+ - Register all three EC2s in the target group used by the Load Balancer
+ 
+ ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/ALBTGregistered.PNG)
  
 
                 
