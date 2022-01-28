@@ -20,30 +20,32 @@ Network Topology:
       
       ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/VPC-1.PNG)
       
-      
-      Subnets:
+    Press the Create VPC button to create the VPC. 
+    
+    Now create the four subnets inside the WP-VPC.
+    
+    Subnets:
+           
+      - VPC ID - WP-VPC
+      - Subnet Name - Public-Subnet-1
+      - Availability Zone - us-east-1a
+      - IPv4 CIDR block - 12.0.1.0/24
               
-              VPC ID - WP-VPC
+      - Subnet Name - Public-Subnet-2
+      - Availability Zone - us-east-1b
+      - IPv4 CIDR block - 12.0.2.0/24
               
-              Subnet Name - Public-Subnet-1
-              Availability Zone - us-east-1a
-              IPv4 CIDR block - 12.0.1.0/24
+      - Subnet Name - Private-Subnet-1
+      - Availability Zone - us-east-1a
+      - IPv4 CIDR block - 12.0.3.0/24
               
-              Subnet Name - Public-Subnet-2
-              Availability Zone - us-east-1b
-              IPv4 CIDR block - 12.0.2.0/24
+      - Subnet Name - Private-Subnet-2
+      - Availability Zone - us-east-1b
+      - IPv4 CIDR block - 12.0.4.0/24
               
-              Subnet Name - Private-Subnet-1
-              Availability Zone - us-east-1a
-              IPv4 CIDR block - 12.0.3.0/24
+      - Enable DNS hostnames and DNS resolution.
               
-              Subnet Name - Private-Subnet-2
-              Availability Zone - us-east-1b
-              IPv4 CIDR block - 12.0.4.0/24
-              
-              Enable DNS hostnames and DNS resolution.
-              
-              Enable auto assign IPv4 settings on the public subnets.
+      - Enable auto assign IPv4 settings on the public subnets.
               
               IMAGES VPC1-4
 
