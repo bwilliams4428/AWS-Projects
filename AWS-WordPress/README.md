@@ -307,7 +307,7 @@ Network Topology:
  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WPASG1.PNG)
  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WPASG2.PNG)
  ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WPASG3.PNG)
-
+ ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/WPASG4.PNG)
  
  
 
