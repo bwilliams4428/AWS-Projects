@@ -11,7 +11,7 @@ Network Topology:
 
 ![](https://github.com/bwilliams4428/AWS-Projects/blob/main/AWS-WordPress/Images/network%20topology.PNG)
 
-1. VPC
+# 1. VPC
 
    Create a custom VPC with two public and two private subnets in different availability zones
         
